@@ -1,69 +1,94 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎨 Figma-to-Canvas
 
-Currently, two official plugins are available:
+Convert your **Figma (or any design) files** directly into a rendered **HTML Canvas** with clean, reusable code.  
+This project is built with **React + TypeScript + Vite** and is developer-focused yet easy to use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Demo Screenshot](./public/ss2.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 📂 Upload any supported design/image/PDF file  
+- 🖼️ Render directly on HTML `<canvas>`  
+- 🔄 Get **generated Canvas API code** from the design  
+- ⚡ Built with **React + TypeScript** (Vite for fast builds)  
+- 💡 Easy to customize and extend
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
+## 🛠️ Tech Stack
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="50" alt="React" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="50" alt="TypeScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" width="50" alt="Vite" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" alt="HTML5/Canvas" />
+</p>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repo
+
+```bash
+git clone https://github.com/anirudh7065/Figma-to-Canvas.git
+cd Figma-to-Canvas
+````
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3️⃣ Run the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+> The app will start at `http://localhost:5173`
+
+---
+
+## 🖼️ How It Works
+
+1. **Upload File** – Choose an image, Figma export, or PDF.
+2. **Process** – The app extracts the image data and draws it on `<canvas>`.
+3. **Generate Code** – Outputs equivalent Canvas API drawing code that you can copy into your own projects.
+
+![Upload Screenshot](./public/ss2.png)
+![Canvas Screenshot](./public/ss1.png)
+
+---
+
+## 📁 Project Structure
+
+```
+├── README.md
+├── public/               # Static assets
+├── src/
+│   ├── App.tsx           # Main React component
+│   ├── lib/fileUpload.ts # Core file processing & canvas logic
+│   ├── assets/           # Icons and images
+│   └── index.css         # Styles
+├── package.json
+├── vite.config.ts
+└── tsconfig.json
+```
+
+---
+
+## 📷 Screenshots
+
+* `./public/ss2.png` – Main app view
+
+- `./public/ss1.png` – Rendered canvas
+
+
+---
+
+> Built with ❤️ using **React + TypeScript + Canvas API**
+
+

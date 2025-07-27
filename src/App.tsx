@@ -26,14 +26,14 @@ export default function FileToCanvas() {
 
 
   return (
-    <main className="w-[100vw] h-[100vh] flex flex-col gap-5 justify-center items-center">
+    <main className="w-[100vw] h-[100vh] py-10 flex flex-col gap-5 md:justify-center items-center">
 
-      <h1 className="text-3xl bg-blue-800 font-extrabold my-6  py-4 px-8 rounded-4xl border-2 border-black">Figma, PNG, JPEG, PDF to Canvas.js Converter</h1>
+      <h1 className="max-md:text-lg md:text-3xl md:bg-blue-800 font-extrabold py-4 text-center max-sm:w-[96%] px-8 rounded-4xl md:border-2 border-black">Figma, PNG, JPEG, PDF to Canvas.js Converter</h1>
 
 
 
-      <div className="conatiner flex justify-center w-[80vw] max-h-[60vh] items-center border-2 border-black rounded-4xl overflow-clip bg-white">
-        {!showCanvas && <div className="h-[60vh] w-[80vw]  bg-white rounded-4xl text-black text-3xl font-bold flex justify-center items-center flex-col gap-4" >
+      <div className="conatiner flex max-md:flex-col justify-center w-[80vw] md:max-h-[60vh] items-center border-2 border-black md:rounded-4xl overflow-clip bg-white">
+        {!showCanvas && <div className="md:h-[60vh] p-6 w-[80vw] max-md:text-xl text-center  bg-white rounded-4xl text-black text-3xl font-bold flex justify-center items-center flex-col gap-4" >
           <p>Hello Welcome to this site.</p>
           <p>Where you can convert Figma, PNG, JPEG, PDF and SVG to Canvas.js</p>
         </div>
@@ -43,15 +43,16 @@ export default function FileToCanvas() {
         {
           showCanvas && (
             <>
-              <div className={`max-h-[60vh] max-w-[40vw] overflow-auto scrollbar-hide`}>
+              <div className={`md:max-h-[60vh] h-[60vh] md:max-w-[40vw] overflow-auto scrollbar-hide`}>
                 <canvas ref={canvasRef} className="max-w-full h-auto"></canvas>
               </div>
-              <textarea id="code" readOnly value={code} className={`scrollbar-hide py-4 resize-none focus:outline-none w-[40vw] h-[60vh] overflow-auto text-center text-xl border-l-2 border-black text-black`} />
+              <div className="flex justify-center items-center bg-slate-900 md:h-[60vh] w-[2px] h-[12px] max-md:w-[80vw]"></div>
+              <textarea id="code" readOnly value={code} className={`scrollbar-hide py-4 resize-none focus:outline-none md:w-[40vw] h-[60vh] max-md:h-[40vh] overflow-auto md:text-center md:text-xl  border-black text-black`} />
             </>
           )
         }
       </div>
-      <div className="btns flex gap-4 w-screen justify-center items-center">
+      <div className="btns flex max-md:flex-col gap-4 w-screen justify-center items-center max-md:py-10">
 
         <button onClick={() => inputRef.current?.click()} className="bg-black text-white px-4 py-2 rounded-3xl">Upload File</button>
         <input type="file" accept=".png,.jpeg,.jpg,.pdf,.svg" onChange={handleFileUpload} className="hidden" ref={inputRef} />
